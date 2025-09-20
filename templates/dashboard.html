@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Innerbloom - Dashboard</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="dashboard-container">
+        <nav class="icon-sidebar">
+            <a href="#" class="sidebar-logo" id="sidebar-toggle">
+                                <div class="sidebar-toggle-icon">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </a>
+            <ul>
+                <li class="active">
+                    <a href="/" data-tooltip="Dashboard">
+                        <i class="fas fa-home"></i>
+                        <span class="sidebar-text">Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/ai_consultant" data-tooltip="AI Consultant">
+                        <i class="fas fa-robot"></i>
+                        <span class="sidebar-text">AI Consultant</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/self_help_book" data-tooltip="Self-Help Books">
+                        <i class="fas fa-book-open"></i>
+                        <span class="sidebar-text">Self-Help Books</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/helpline" data-tooltip="Helpline">
+                        <i class="fas fa-phone"></i>
+                        <span class="sidebar-text">Helpline</span>
+                    </a>
+                </li>
+                
+            </ul>
+        </nav>
+        <main class="dashboard-content">
+            <header class="dashboard-header">
+                <h1>Welcome to Innerbloom</h1>
+                <p>Your personal growth journey starts here.</p>
+            </header>
+            <div class="content-cards">
+                <div class="content-card">
+                    <i class="fas fa-robot card-icon"></i>
+                    <h3>AI Consultant</h3>
+                    <p>Get personalized advice and insights from our AI-powered consultant.</p>
+                    <a href="/ai_consultant" class="card-button">Get Started</a>
+                </div>
+                <div class="content-card">
+                    <i class="fas fa-book-open card-icon"></i>
+                    <h3>Self-Help Books</h3>
+                    <p>Discover a curated collection of books to support your personal growth.</p>
+                    <a href="/self_help_book" class="card-button">Browse Books</a>
+                </div>
+                <div class="content-card">
+                    <i class="fas fa-phone card-icon"></i>
+                    <h3>Helpline</h3>
+                    <p>Find a list of helpline numbers for immediate support.</p>
+                    <a href="/helpline" class="card-button">Find Help</a>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

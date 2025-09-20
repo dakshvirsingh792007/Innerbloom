@@ -1,0 +1,425 @@
+:root {
+    --primary-bg-color: #0A192F;
+    --secondary-color: #64FFDA;
+    --text-color-primary: #CCD6F6;
+    --text-color-secondary: #8892B0;
+    --accent-bg-color: rgba(100, 255, 218, 0.15); /* Slightly more opaque */
+    --border-color: #1E3A8A;
+    --box-shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7);
+    --font-sans: 'Calibre', 'Inter', 'San Francisco', 'SF Pro Text', -apple-system, system-ui, sans-serif;
+    --font-mono: 'SF Mono', 'Fira Code', 'Fira Mono', 'Roboto Mono', monospace;
+    --sidebar-width: 280px;
+}
+
+/* General body and typography adjustments */
+body {
+    font-family: var(--font-sans);
+    margin: 0;
+    background-color: var(--primary-bg-color);
+    color: var(--text-color-primary);
+    line-height: 1.6;
+    display: flex;
+    overflow-x: hidden;
+    transition: background-color 0.3s ease; /* Smooth background transition */
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--text-color-primary);
+    font-weight: 700; /* Slightly bolder headings */
+    line-height: 1.2; /* Tighter line height for headings */
+    margin-bottom: 0.75rem; /* Consistent bottom margin */
+}
+
+p {
+    color: var(--text-color-secondary);
+    font-size: 1.15rem; /* Slightly larger paragraph text */
+    margin-bottom: 1.5rem; /* More space between paragraphs */
+}
+
+a {
+    text-decoration: none;
+    color: var(--secondary-color);
+    transition: color 0.3s ease, text-shadow 0.3s ease; /* Transition for text-shadow */
+}
+
+a:hover {
+    color: var(--secondary-color);
+    text-shadow: 0 0 7px var(--secondary-color); /* More pronounced glow */
+}
+
+/* Enhanced Sidebar Styles */
+.sidebar {
+    width: var(--sidebar-width);
+    height: 100vh;
+    background-color: var(--primary-bg-color);
+    border-right: 1px solid var(--border-color);
+    padding: 3rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    box-shadow: var(--box-shadow);
+    transition: width 0.3s ease; /* Smooth width transition */
+}
+
+.sidebar .logo {
+    margin-bottom: 2.5rem; /* More space below logo */
+    padding-left: 2rem;
+    font-size: 2.2rem; /* Slightly larger logo */
+    font-weight: 700;
+    color: var(--secondary-color);
+    text-shadow: 0 0 7px rgba(100, 255, 218, 0.6); /* Stronger logo glow */
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+.sidebar ul li {
+    padding: 1.1rem 2rem; /* Slightly larger padding */
+    text-align: left;
+    transition: background-color 0.3s ease, padding-left 0.3s ease;
+    position: relative; /* For icon positioning */
+}
+
+.sidebar ul li:hover {
+    background-color: var(--accent-bg-color);
+    padding-left: 2.7rem; /* More pronounced hover effect */
+}
+
+.sidebar ul li a {
+    color: var(--text-color-primary);
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    font-size: 1.1rem;
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+
+.sidebar ul li a:hover {
+    color: var(--secondary-color); /* Hover color for links */
+}
+
+.sidebar ul li a.active {
+    color: var(--secondary-color);
+    font-weight: 600;
+    text-shadow: 0 0 5px rgba(100, 255, 218, 0.4); /* Glow for active link */
+}
+
+/* Add icons to sidebar items (example) */
+.sidebar ul li::before {
+    content: '\f015'; /* Example: Font Awesome home icon */
+    font-family: FontAwesome;
+    position: absolute;
+    left: 0.8rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-color-secondary);
+    opacity: 0.7;
+    transition: color 0.3s ease;
+}
+
+.sidebar ul li:hover::before {
+    color: var(--secondary-color); /* Icon color on hover */
+}
+
+/* Main Content Area */
+main {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 2rem;
+    min-height: 70vh;
+    margin-left: var(--sidebar-width);
+    width: calc(100% - var(--sidebar-width));
+    transition: margin-left 0.5s ease;
+}
+
+/* Header Styles */
+header {
+    background-color: var(--primary-bg-color);
+    padding: 1.5rem 2rem;
+    border-bottom: 1px solid var(--border-color);
+    position: relative;
+    z-index: 90;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 2.5rem;
+}
+
+nav ul li a {
+    font-size: 1.1rem;
+    padding: 0.75rem 1.25rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: var(--accent-bg-color);
+    color: var(--secondary-color);
+}
+
+/* Section Styles */
+section {
+    background-color: var(--accent-bg-color);
+    padding: 3rem;
+    border-radius: 10px;
+    margin-bottom: 3rem;
+    box-shadow: var(--box-shadow);
+    transition: transform 0.3s ease; /* Add transition to sections */
+}
+
+section:hover {
+    transform: translateY(-5px); /* Slight lift on hover */
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 5rem 2rem; /* Increased padding */
+    background: linear-gradient(to bottom, rgba(10, 25, 47, 0.8), var(--primary-bg-color)), url('path/to/your/image.jpg'); /* Add a gradient overlay */
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    box-shadow: var(--box-shadow);
+}
+
+.hero h1 {
+    font-size: 4rem; /* Larger title */
+    margin-bottom: 1.5rem;
+    color: var(--text-color-primary);
+    text-shadow: 0 0 12px rgba(100, 255, 218, 0.7); /* Stronger text shadow */
+}
+
+.hero p {
+    font-size: 1.5rem; /* Larger paragraph text */
+    margin-bottom: 3rem;
+    color: var(--text-color-secondary);
+}
+
+/* Button Styles */
+button {
+    background-color: var(--secondary-color);
+    color: var(--primary-bg-color);
+    border: none;
+    padding: 14px 30px;
+    font-size: 1.2rem;
+    border-radius: 7px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease; /* Add background-color transition */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+    outline: none; /* Remove default outline */
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+    background-color: #50e3c2; /* Slightly lighter on hover */
+}
+
+button:focus {
+    box-shadow: 0 0 0 3px rgba(100, 255, 218, 0.5); /* Add focus ring */
+}
+
+/* AI Consultant Page Styles */
+.ai-consultant-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content horizontally */
+}
+
+.ai-consultant-page h2 {
+    color: var(--secondary-color);
+    margin-bottom: 2rem;
+    font-size: 2.7rem; /* Slightly larger heading */
+    text-align: center; /* Center the heading */
+}
+
+.input-area {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 30px;
+    width: 80%; /* Limit width for better readability */
+    max-width: 800px; /* Maximum width */
+}
+
+textarea {
+    width: 100%;
+    padding: 20px;
+    border: 1px solid var(--border-color);
+    border-radius: 7px;
+    background-color: var(--primary-bg-color);
+    color: var(--text-color-primary);
+    font-size: 1.1rem;
+    resize: vertical;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.2);
+    outline: none; /* Remove default outline */
+    transition: border-color 0.3s ease; /* Smooth border color transition */
+}
+
+textarea::placeholder {
+    color: var(--text-color-secondary);
+    opacity: 0.8; /* Slightly more visible placeholder */
+}
+
+textarea:focus {
+    border-color: var(--secondary-color); /* Highlight border on focus */
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.3), 0 0 5px rgba(100, 255, 218, 0.3); /* Add focus shadow */
+}
+
+.response-area {
+    background-color: var(--primary-bg-color);
+    padding: 25px; /* Increased padding */
+    border-radius: 7px;
+    border: 1px solid var(--border-color);
+    min-height: 150px;
+    box-shadow: var(--box-shadow);
+    width: 80%; /* Match input area width */
+    max-width: 800px;
+}
+
+.response-area p {
+    margin: 0;
+    color: var(--text-color-secondary);
+    font-size: 1.1rem; /* Slightly larger response text */
+    line-height: 1.7; /* Improved line height */
+}
+
+/* Footer Styles */
+footer {
+    text-align: center;
+    padding: 2.5rem; /* Increased padding */
+    background-color: var(--primary-bg-color);
+    color: var(--text-color-secondary);
+    border-top: 1px solid var(--border-color);
+    margin-top: 3rem;
+}
+
+/* Add a subtle background pattern */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cpath d='M0 0h60v60H0z' fill='%230A192F'/%3E%3Cpath d='M4 0h52v4H4zM4 56h52v4H4zM56 4v52H60V4zM0 4v52h4V4z' fill='%231E3A8A'/%3E%3C/g%3E%3C/svg%3E");
+    opacity: 0.08;
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    :root {
+        --sidebar-width: 100%; /* Sidebar takes full width on small screens */
+    }
+
+    .sidebar {
+        position: static; /* No longer fixed */
+        width: 100%;
+        height: auto;
+        border-right: none;
+        border-bottom: 1px solid var(--border-color);
+        box-shadow: none;
+        padding: 1rem 0;
+    }
+
+    .sidebar ul {
+        display: flex;
+        overflow-x: auto; /* Enable horizontal scrolling for links */
+        padding: 0 1rem;
+    }
+
+    .sidebar ul li {
+        padding: 0.75rem 1rem;
+        white-space: nowrap; /* Prevent wrapping */
+    }
+
+    main {
+        margin-left: 0;
+        width: 100%;
+        padding: 1rem;
+    }
+
+    .hero {
+        padding: 3rem 1rem;
+    }
+
+    .hero h1 {
+        font-size: 3rem;
+    }
+
+    .input-area,
+    .response-area {
+        width: 95%; /* Full width on smaller screens */
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav ul li {
+        margin-left: 0;
+        margin-top: 1rem;
+    }
+}
+
+/* Self-Help Book Page Styles */
+.book-container {
+    display: flex;
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.book-content {
+    flex: 2;
+}
+
+.qa-section {
+    flex: 1;
+    background-color: var(--accent-bg-color);
+    padding: 2rem;
+    border-radius: 10px;
+}
+
+.chapter-card {
+    background-color: var(--accent-bg-color);
+    padding: 2rem;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    box-shadow: var(--box-shadow);
+    transition: transform 0.3s ease;
+}
+
+.chapter-card:hover {
+    transform: translateY(-5px);
+}
+
+.chapter-card h3 {
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+}
